@@ -10,6 +10,42 @@ body {
   height: 150vh;
   background-color: #191919;
 }
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+.rightElements {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.rightElements a {
+  text-decoration: none;
+  color: white;
+  z-index: 10;
+}
+.rightElements a::after {
+  content: " ";
+  display: block;
+  height: 25px;
+  filter: opacity(0.4);
+  width: 100%;
+  transform: scaleX(0);
+  position: absolute;
+  background-color: rgb(231, 54, 54);
+  bottom: 0;
+  transition: transform 0.5s ease-out;
+}
+.rightElements a:hover::after {
+  transform: scaleX(1);
+}
 .main {
   width: 100%;
   height: 100vh;
@@ -19,7 +55,7 @@ body {
 }
 .text {
   width: 70vw;
-  padding: 30px;
+  /* padding: 30px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,4 +96,11 @@ body {
 #card-three {
   margin-top: 120vh;
   z-index: 7;
+}
+@media screen and (max-width: 800px) {
+  .cards img {
+    width: 90vw;
+    height: 70vh;
+    object-fit: cover;
+  }
 }
